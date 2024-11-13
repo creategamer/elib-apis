@@ -1,5 +1,5 @@
 import express from 'express'
-import { createBook, getSingleBook, listBooks, updateBook } from './bookController'
+import { createBook, deleteBook, getSingleBook, listBooks, updateBook } from './bookController'
 import multer from 'multer'
 import path from 'node:path'
 import authenticate from '../middlewares/authentication'
@@ -29,5 +29,6 @@ bookRoutes.get('/',listBooks)
 
 bookRoutes.get('/:bookId',getSingleBook)
 
+bookRoutes.delete('/:bookId',authenticate,deleteBook)
 
 export default bookRoutes
