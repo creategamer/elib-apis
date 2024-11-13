@@ -11,7 +11,7 @@ const _config={
     coudinary_cloud:process.env.CLOUDINARY_CLOUD,
     coudinaryApikey:process.env.CLOUDINARY_API_KEY,
     coudinaryApiSecret:process.env.CLOUDINARY_API_SECRET,
-    
+    frontendDomain:process.env.FRONTEND_DOMAIN
 };
 
 
