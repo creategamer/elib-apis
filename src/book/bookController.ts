@@ -39,7 +39,10 @@ const createBook=async(req:Request,res:Response,next:NextFunction)=>{
     
         // console.log('bookFileUploadResult:',bookFileUploadResult)
         // console.log('uploaded result:',uploadResult);
-        
+
+        // @ts-ignore
+        console.log('userId:',req.userId)
+
         const newBook=await bookModel.create({
             title,
             genre,
@@ -48,7 +51,7 @@ const createBook=async(req:Request,res:Response,next:NextFunction)=>{
             file:bookFileUploadResult.secure_url
         })
 
-        
+
         try {
             //Delete temp.files
             await fs.promises.unlink(filePath)
